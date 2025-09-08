@@ -148,7 +148,7 @@
     border-radius: 999px;
     border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
     color: var(--muted);
-   }
+ }
 
   .feature { display: flex; gap: .9rem; align-items: flex-start; }
   .icon {
@@ -161,3 +161,44 @@
     color: white;
     box-shadow: var(--shadow-sm);
   }
+
+  .timeline {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, 1fr);
+    overflow-x: auto;
+    padding-bottom: .5rem;
+    scroll-snap-type: x mandatory;
+  }
+  .timeline .card { scroll-snap-align: start; }
+
+  details {
+    border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+    border-radius: 12px;
+    padding: .75rem 1rem;
+    background: var(--paper);
+  }
+  summary { cursor: pointer; list-style: none; font-weight: 600; }
+  summary::marker { display: none; }
+  details[open] { box-shadow: var(--shadow-sm); }
+
+  .input {
+    width: 100%;
+    padding: .7rem .85rem;
+    border-radius: 12px;
+    background: var(--paper);
+    border: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
+  }
+  .input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--ring);
+    border-color: transparent;
+  }
+
+  footer { padding: 3rem 0 4rem; color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
