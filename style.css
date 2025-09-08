@@ -332,6 +332,12 @@ details[open] { box-shadow: var(--shadow-sm); }
   border-color: transparent;
 }
 
+form button[type="submit"] {
+  display: block;
+  margin: 1.5rem auto 0;
+  grid-column: 1 / -1;
+}
+
 footer {
   padding: 3rem 0 4rem;
   color: var(--muted);
