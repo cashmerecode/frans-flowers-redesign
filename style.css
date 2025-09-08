@@ -45,10 +45,7 @@
   a:hover { color: var(--brand-600); text-decoration: underline; }
   button { font: inherit; }
 
-  .container {
-    width: min(1100px, 100% - 2rem);
-    margin-inline: auto;
-  }
+  .container { width: min(1100px, 100% - 2rem); margin-inline: auto; }
   .grid { display: grid; gap: 1.25rem; }
   .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -69,12 +66,7 @@
     justify-content: space-between;
     padding: .75rem 0;
   }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    font-weight: 700;
-  }
+  .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; }
   .brand .logo {
     width: 28px;
     height: 28px;
@@ -82,18 +74,10 @@
     background: linear-gradient(135deg, var(--brand), var(--brand-600));
     box-shadow: var(--shadow-sm);
   }
-  nav a {
-    padding: .5rem .75rem;
-    border-radius: 10px;
-  }
-  nav a:hover {
-    background: color-mix(in oklab, var(--brand) 12%, transparent);
-  }
+  nav a { padding: .5rem .75rem; border-radius: 10px; }
+  nav a:hover { background: color-mix(in oklab, var(--brand) 12%, transparent); }
 
-  .hero {
-    padding: 5rem 0 3rem;
-    text-align: center;
-  }
+  .hero { padding: 5rem 0 3rem; text-align: center; }
   .eyebrow {
     display: inline-block;
     font-size: .85rem;
@@ -116,12 +100,7 @@
     margin: 0 auto 1.5rem;
     max-width: 50ch;
   }
-  .cta {
-    display: flex;
-    gap: .75rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .cta { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
   .btn {
     display: inline-flex;
     align-items: center;
@@ -144,9 +123,7 @@
     color: var(--ink);
     border-color: color-mix(in oklab, var(--ink) 18%, transparent);
   }
-  .btn.secondary:hover {
-    background: color-mix(in oklab, var(--ink) 6%, transparent);
-  }
+  .btn.secondary:hover { background: color-mix(in oklab, var(--ink) 6%, transparent); }
 
   section { padding: 2.75rem 0; }
   .section-title {
@@ -167,10 +144,7 @@
     border: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
     transition: transform .18s ease, box-shadow .2s ease;
   }
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-  }
+  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .card h3 { margin: .25rem 0 .5rem; }
   .chip {
     display: inline-flex;
