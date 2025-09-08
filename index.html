@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fran's Florals</title>
-  <meta name="description" content="Fran's Florals — fresh, seasonal bouquets with same-day local delivery. Weddings, birthdays, sympathy, and just because." />
+  <meta name="description" content="Fran's Florals – fresh, seasonal bouquets with same-day local delivery." />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/svg+xml" href="img/rose.svg" />
   <link rel="alternate icon" href="img/rose-32.png" sizes="32x32" type="image/png" />
@@ -12,18 +12,40 @@
   <meta name="theme-color" content="#0a0f1a" />
 </head>
 <body>
-  <div class="scrim" hidden></div>
-  <aside class="drawer" aria-hidden="true" aria-labelledby="drawer-title">
-    <div class="drawer-header">
-      <div class="brand brand-compact">
-        <span class="logo" aria-hidden="true">
-          <img src="img/rose.svg" alt="" width="18" height="18" />
-        </span>
-        <span id="drawer-title">Fran's Florals</span>
-      </div>
-      <button class="drawer-close" aria-label="Close menu" type="button">✕</button>
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <span class="logo" aria-hidden="true"><img src="img/rose.svg" alt="" width="18" height="18" /></span>
+        <span>Fran's Florals</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="#features">Shop</a>
+        <a href="#timeline">Occasions</a>
+        <a href="#faq">Delivery & FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <svg width="26" height="18" viewBox="0 0 26 18" fill="currentColor" aria-hidden="true">
+          <rect width="26" height="2.5" rx="1.25" y="0"></rect>
+          <rect width="26" height="2.5" rx="1.25" y="7.75"></rect>
+          <rect width="26" height="2.5" rx="1.25" y="15.5"></rect>
+        </svg>
+      </button>
     </div>
-    <nav class="drawer-nav" aria-label="Mobile">
+  </header>
+
+  <div class="scrim" hidden></div>
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="#" class="brand mini">
+        <span class="logo" aria-hidden="true"><img src="img/rose.svg" alt="" width="16" height="16" /></span>
+        <span>Fran's Florals</span>
+      </a>
+      <button class="drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="drawer-nav">
       <a href="#features">Shop</a>
       <a href="#timeline">Occasions</a>
       <a href="#faq">Delivery & FAQ</a>
@@ -31,28 +53,7 @@
     </nav>
   </aside>
 
-  <header>
-    <div class="container nav">
-      <a href="#" class="brand">
-        <span class="logo" aria-hidden="true">
-          <img src="img/rose.svg" alt="" width="18" height="18" />
-        </span>
-        <span>Fran's Florals</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#features">Shop</a>
-        <a href="#timeline">Occasions</a>
-        <a href="#faq">Delivery & FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Open menu" aria-controls="drawer" aria-expanded="false" type="button">
-      </button>
-    </div>
-  </header>
-
   <main>
-    <!-- HERO GIF -->
     <section class="hero container">
       <span class="eyebrow">Fresh flowers • Same-day delivery</span>
       <h1>Seasonal bouquets, handcrafted with care.</h1>
@@ -63,16 +64,14 @@
       </div>
     </section>
 
-    <!-- FEATURE CARDS -->
     <section id="features">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title center">
           <h2>Our favorites</h2>
           <p>Popular picks, ready to deliver today.</p>
         </div>
 
         <div class="grid grid-3">
-          <!-- Market Bouquet -->
           <article class="card">
             <img class="product" src="img/flowers1.jpg" alt="The Market Bouquet — seasonal mix of fresh flowers" loading="lazy" />
             <div class="chip">From $55</div>
@@ -84,7 +83,6 @@
             </div>
           </article>
 
-          <!-- Rosy Classic -->
           <article class="card">
             <img class="product" src="img/flowers2.jpg" alt="Rosy Classic bouquet with eucalyptus and ruscus" loading="lazy" />
             <div class="chip">From $85</div>
@@ -96,7 +94,6 @@
             </div>
           </article>
 
-          <!-- Sunlit Garden -->
           <article class="card">
             <img class="product" src="img/store.jpg" alt="Sunlit Garden bouquet in yellow and cream tones with soft greens" loading="lazy" />
             <div class="chip">From $65</div>
@@ -111,16 +108,14 @@
       </div>
     </section>
 
-    <!-- OCCASIONS / SEASONS -->
     <section id="timeline">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title center">
           <h2>Occasions & seasons</h2>
           <p>Inspiration for every moment of the year.</p>
         </div>
 
         <div class="timeline" role="list">
-          <!-- SPRING -->
           <article class="card" role="listitem" data-gallery>
             <h3>Spring</h3>
             <p><strong>March–May:</strong> Tulips, ranunculus, sweet pea, and peonies when available.</p>
@@ -136,7 +131,6 @@
             </div>
           </article>
 
-          <!-- SUMMER -->
           <article class="card" role="listitem" data-gallery>
             <h3>Summer</h3>
             <p><strong>June–August:</strong> Dahlias, sunflowers, garden roses, and fragrant herbs.</p>
@@ -152,7 +146,6 @@
             </div>
           </article>
 
-          <!-- AUTUMN -->
           <article class="card" role="listitem" data-gallery>
             <h3>Autumn</h3>
             <p><strong>September–November:</strong> Chrysanthemums, amaranthus, maple foliage, and warm tones.</p>
@@ -168,7 +161,6 @@
             </div>
           </article>
 
-          <!-- WINTER -->
           <article class="card" role="listitem" data-gallery>
             <h3>Winter</h3>
             <p><strong>December–February:</strong> Evergreens, anemones, hellebores, berries, and whites.</p>
@@ -187,10 +179,9 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
     <section id="how">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title center">
           <h2>How it works</h2>
           <p>Simple ordering, careful delivery.</p>
         </div>
@@ -216,10 +207,9 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title center">
           <h2>Delivery & FAQ</h2>
           <p>Answers to common questions.</p>
         </div>
@@ -246,8 +236,9 @@
   </main>
 
   <footer>
-    <div class="container">
-      <p><strong>Fran's Flowers</strong> — seasonal flowers, local delivery, custom designs.</p>
+    <div class="container footer-center">
+      <p><strong>Fran's Flowers</strong></p>
+      <p>seasonal flowers, local delivery, custom designs.</p>
     </div>
   </footer>
 
@@ -257,32 +248,28 @@
     setShadow();
     document.addEventListener('scroll', setShadow, { passive: true });
 
-    const body = document.body;
-    const drawer = document.querySelector('.drawer');
-    const scrim = document.querySelector('.scrim');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const drawerClose = document.querySelector('.drawer-close');
+    const toggle = document.querySelector('.menu-toggle');
+    const drawer = document.getElementById('drawer');
+    const scrim  = document.querySelector('.scrim');
+    const closeBtn = document.querySelector('.drawer-close');
 
     function openDrawer() {
-      drawer?.classList.add('open');
-      drawer?.setAttribute('aria-hidden', 'false');
-      scrim?.classList.add('active');
-      scrim?.removeAttribute('hidden');
-      menuToggle?.setAttribute('aria-expanded', 'true');
-      body.classList.add('noscroll');
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+      scrim.hidden = false;
+      document.body.classList.add('noscroll');
     }
     function closeDrawer() {
-      drawer?.classList.remove('open');
-      drawer?.setAttribute('aria-hidden', 'true');
-      scrim?.classList.remove('active');
-      scrim?.setAttribute('hidden', '');
-      menuToggle?.setAttribute('aria-expanded', 'false');
-      body.classList.remove('noscroll');
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      scrim.hidden = true;
+      document.body.classList.remove('noscroll');
     }
-
-    menuToggle?.addEventListener('click', openDrawer);
-    drawerClose?.addEventListener('click', closeDrawer);
-    scrim?.addEventListener('click', closeDrawer);
+    toggle.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    scrim.addEventListener('click', closeDrawer);
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
 
     (function initGalleries(){
@@ -298,21 +285,20 @@
           index = (i + slides.length) % slides.length;
           track.style.transform = `translateX(${-index * 100}%)`;
         };
+        const stepF = () => show(index + 1);
+        const stepB = () => show(index - 1);
 
-        const stepForward = () => show(index + 1);
-        const stepBack    = () => show(index - 1);
-
-        prev?.addEventListener('click', stepBack);
-        next?.addEventListener('click', stepForward);
-        track.addEventListener('click', stepForward);
+        prev?.addEventListener('click', stepB);
+        next?.addEventListener('click', stepF);
+        track.addEventListener('click', stepF);
 
         let startX = 0, dx = 0;
         gal.addEventListener('touchstart', e => { startX = e.touches[0].clientX; dx = 0; }, {passive:true});
         gal.addEventListener('touchmove',  e => { dx = e.touches[0].clientX - startX; }, {passive:true});
-        gal.addEventListener('touchend',   () => { if (Math.abs(dx) > 40) (dx < 0 ? stepForward() : stepBack()); });
+        gal.addEventListener('touchend',   () => { if (Math.abs(dx) > 40) (dx < 0 ? stepF() : stepB()); });
 
         let timer;
-        const start = () => { stop(); timer = setInterval(stepForward, 5000); };
+        const start = () => { stop(); timer = setInterval(stepF, 5000); };
         const stop  = () => { if (timer) clearInterval(timer); };
 
         gal.addEventListener('pointerenter', stop);
