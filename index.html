@@ -175,8 +175,14 @@
   </main>
   <footer>
     <div class="container">
-      <p><strong>Bloom & Vine Florals</strong> — seasonal flowers, local delivery, custom designs.</p>
+      <p><strong>Frans Flowers</strong> — seasonal flowers, local delivery, custom designs.</p>
     </div>
   </footer>
+  <script>
+    const header = document.querySelector('header');
+    const setShadow = () => header.style.boxShadow = window.scrollY > 6 ? 'var(--shadow-sm)' : 'none';
+    setShadow();
+    document.addEventListener('scroll', setShadow, {passive:true});
+  </script>
 </body>
 </html>
