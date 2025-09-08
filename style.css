@@ -30,3 +30,15 @@
     background: color-mix(in oklab, var(--canvas) 80%, transparent);
     border-bottom: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
   }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-weight: 700;
+  }
