@@ -148,4 +148,16 @@
     border-radius: 999px;
     border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
     color: var(--muted);
+   }
+
+  .feature { display: flex; gap: .9rem; align-items: flex-start; }
+  .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(180deg, var(--brand), var(--brand-600));
+    color: white;
+    box-shadow: var(--shadow-sm);
   }
