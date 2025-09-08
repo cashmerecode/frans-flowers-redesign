@@ -30,7 +30,6 @@
   }
 }
 
-/* Base */
 *, *::before, *::after { box-sizing: border-box; }
 html:focus-within { scroll-behavior: smooth; }
 
@@ -48,7 +47,6 @@ a:hover { color: var(--brand-600); text-decoration: underline; }
 button { font: inherit; cursor: pointer; background: none; border: 0; color: inherit; }
 :focus-visible { outline: none; box-shadow: 0 0 0 4px var(--ring); border-radius: 8px; }
 
-/* Layout */
 .container { width: min(1100px, 100% - 2rem); margin-inline: auto; }
 .grid { display: grid; gap: 1.25rem; }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -56,7 +54,6 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
 
-/* Header / Nav */
 header {
   position: sticky;
   top: 0;
@@ -71,7 +68,6 @@ header {
   justify-content: space-between;
   padding: .75rem 0;
 }
-
 .brand {
   display: inline-flex;
   align-items: center;
@@ -106,7 +102,6 @@ header {
   .menu-toggle { display: inline-flex; }
 }
 
-/* Drawer */
 .scrim {
   position: fixed;
   inset: 0;
@@ -153,7 +148,6 @@ header {
   color: var(--brand-600);
 }
 
-/* Hero */
 .hero {
   position: relative;
   padding: 6rem 0 4rem;
@@ -195,7 +189,6 @@ h1 {
   max-width: 60ch;
 }
 
-/* CTAs */
 .cta {
   display: flex;
   gap: .75rem;
@@ -225,7 +218,6 @@ form .cta {
 .btn.secondary { background: rgba(255, 255, 255, .08); color: #fff; border-color: rgba(255, 255, 255, .22); }
 .btn.secondary:hover { background: rgba(255, 255, 255, .16); }
 
-/* Sections */
 section { padding: 2.75rem 0; }
 
 .section-title {
@@ -238,7 +230,6 @@ section { padding: 2.75rem 0; }
 }
 .section-title h2 { font-size: 1.6rem; margin: 0; }
 
-/* Cards / Products */
 .card {
   background: var(--paper);
   border-radius: var(--radius);
@@ -269,7 +260,6 @@ section { padding: 2.75rem 0; }
   color: var(--muted);
 }
 
-/* Timeline / Gallery */
 .timeline {
   display: grid;
   gap: 1rem;
@@ -320,7 +310,6 @@ section { padding: 2.75rem 0; }
 .gallery-btn.prev { left: .5rem; }
 .gallery-btn.next { right: .5rem; }
 
-/* FAQ */
 details {
   border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
   border-radius: 12px;
@@ -331,7 +320,6 @@ summary { cursor: pointer; list-style: none; font-weight: 600; }
 summary::marker { display: none; }
 details[open] { box-shadow: var(--shadow-sm); }
 
-/* Forms */
 .input {
   width: 100%;
   padding: .7rem .85rem;
@@ -345,21 +333,51 @@ details[open] { box-shadow: var(--shadow-sm); }
   border-color: transparent;
 }
 
-/* Center the form submit button */
 form button[type="submit"] {
   display: block;
   margin: 1.5rem auto 0;
   grid-column: 1 / -1;
 }
 
-/* Footer */
+.testimonial footer {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+.testimonial .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
+  box-shadow: var(--shadow-sm);
+}
+
 footer {
   padding: 3rem 0 4rem;
   color: var(--muted);
   text-align: center;
 }
+.social {
+  margin-top: 1rem;
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+}
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+  border-radius: 10px;
+  text-decoration: none;
+}
+.social a:hover {
+  background: color-mix(in oklab, var(--brand) 12%, transparent);
+  text-decoration: none;
+}
 
-/* Motion */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
   .hero::before { display: none; }
