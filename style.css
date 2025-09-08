@@ -114,7 +114,7 @@ header {
   position: fixed;
   inset: 0 0 0 auto;
   width: min(86vw,360px);
-  background: var(--paper);
+  background: var(--paper); /* solid background */
   color: var(--ink);
   box-shadow: var(--shadow-lg);
   transform: translateX(100%);
@@ -139,6 +139,7 @@ header {
   border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 600;
+  color: var(--ink);
 }
 .drawer-nav a:hover {
   background: color-mix(in oklab,var(--brand) 15%,transparent);
@@ -192,11 +193,11 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
 }
-.card .cta {
-  justify-content: center !important;
-}
-form .cta {
-  justify-content: center !important;
+.card .cta,
+form .btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .btn {
