@@ -69,8 +69,16 @@ header {
   padding: .75rem 0;
 }
 
-.brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
 
+/* Logo square that wraps the rose */
 .brand .logo {
   width: 28px;
   height: 28px;
@@ -80,11 +88,13 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .brand .logo img {
   width: 16px;
   height: 16px;
+  object-fit: contain;
   display: block;
 }
 
