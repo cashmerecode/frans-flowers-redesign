@@ -61,12 +61,8 @@ header {
   background: color-mix(in oklab, var(--canvas) 80%, transparent);
   border-bottom: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
 }
-.nav {
-  display: flex; align-items: center; justify-content: space-between; padding: .75rem 0;
-}
-.brand {
-  display: flex; align-items: center; gap: .6rem; font-weight: 700; color: var(--ink); text-decoration: none;
-}
+.nav { display: flex; align-items: center; justify-content: space-between; padding: .75rem 0; }
+.brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; color: var(--ink); text-decoration: none; }
 .brand .logo {
   width: 28px; height: 28px; border-radius: 8px;
   background: linear-gradient(135deg, var(--brand), var(--brand-600));
@@ -89,8 +85,7 @@ nav a:hover { background: color-mix(in oklab, var(--brand) 12%, transparent); }
   overflow: hidden;
 }
 .hero::before {
-  content: "";
-  position: absolute; inset: 0;
+  content: ""; position: absolute; inset: 0;
   background: linear-gradient(to bottom, rgba(2,6,23,.55), rgba(2,6,23,.35));
 }
 .hero * { position: relative; z-index: 1; }
@@ -99,14 +94,8 @@ nav a:hover { background: color-mix(in oklab, var(--brand) 12%, transparent); }
   color: #fff; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.28);
   padding: .35rem .6rem; border-radius: 999px; backdrop-filter: blur(2px);
 }
-h1 {
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  line-height: 1.1; margin: .75rem 0; color: #fff;
-}
-.lead {
-  font-size: clamp(1rem, 2.4vw, 1.25rem);
-  color: #e5e7eb; margin: 0 auto 1.5rem; max-width: 60ch;
-}
+h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); line-height: 1.1; margin: .75rem 0; color: #fff; }
+.lead { font-size: clamp(1rem, 2.4vw, 1.25rem); color: #e5e7eb; margin: 0 auto 1.5rem; max-width: 60ch; }
 .cta { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
 .card .cta { justify-content: flex-start; }
 
@@ -130,12 +119,19 @@ h1 {
 
 /* --- Sections & Cards --- */
 section { padding: 2.75rem 0; }
-.section-title {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; margin-bottom: 1.25rem;
-}
+.section-title { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
 .section-title h2 { font-size: 1.6rem; margin: 0; }
 .section-title p { margin: 0; color: var(--muted); }
+
+/* Center title + subhead in "Our favorites" */
+#features .section-title {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .4rem;
+}
+#features .section-title h2 { margin: 0; }
+#features .section-title p  { margin: 0; }
 
 .card {
   background: var(--paper); border-radius: var(--radius); padding: 1.1rem;
@@ -146,7 +142,7 @@ section { padding: 2.75rem 0; }
 .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .card h3 { margin: .25rem 0 .5rem; }
 
-/* Product / feature images */
+/* Product / feature images (avoid affecting gallery slides) */
 .card img.product {
   width: 100%; border-radius: calc(var(--radius) - 4px);
   margin-bottom: .75rem; aspect-ratio: 4/3; object-fit: cover;
@@ -167,7 +163,7 @@ section { padding: 2.75rem 0; }
 .timeline .card { scroll-snap-align: start; }
 
 /* --- Mini gallery (carousel) inside each season card --- */
-.gallery { position: relative; margin-top: .75rem; }
+.gallery { position: relative; margin-top: .75rem; touch-action: pan-y; }
 .gallery .track {
   display: flex; overflow: hidden;
   border-radius: calc(var(--radius) - 6px);
@@ -186,17 +182,18 @@ section { padding: 2.75rem 0; }
   -webkit-user-drag: none;
 }
 
-.gallery-btn {
+.gallery .gallery-btn {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 32px; height: 32px; border-radius: 8px;
   background: color-mix(in oklab, var(--paper) 75%, transparent);
   border: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
   box-shadow: var(--shadow-sm);
   color: var(--ink);
+  z-index: 2;
 }
-.gallery-btn:hover { background: color-mix(in oklab, var(--paper) 90%, transparent); }
-.gallery-btn.prev { left: .5rem; }
-.gallery-btn.next { right: .5rem; }
+.gallery .gallery-btn:hover { background: color-mix(in oklab, var(--paper) 90%, transparent); }
+.gallery .gallery-btn.prev { left: .5rem; }
+.gallery .gallery-btn.next { right: .5rem; }
 
 /* --- FAQ --- */
 details {
@@ -217,6 +214,7 @@ details[open] { box-shadow: var(--shadow-sm); }
 /* --- Footer --- */
 footer { padding: 3rem 0 4rem; color: var(--muted); }
 
+/* Global reduced-motion kill-switch for any animation */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
