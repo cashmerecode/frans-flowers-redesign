@@ -72,3 +72,54 @@
     padding: .35rem .6rem;
     border-radius: 999px;
   }
+  h1 {
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    line-height: 1.1;
+    margin: .75rem 0;
+  }
+  .lead {
+    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    color: var(--muted);
+    margin: 0 auto 1.5rem;
+    max-width: 50ch;
+  }
+  .cta {
+    display: flex;
+    gap: .75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background: var(--brand);
+    color: white;
+    box-shadow: var(--shadow-md);
+    transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn:hover {
+    background: var(--brand-600);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+  }
+  .btn.secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: color-mix(in oklab, var(--ink) 18%, transparent);
+  }
+  .btn.secondary:hover {
+    background: color-mix(in oklab, var(--ink) 6%, transparent);
+  }
+
+  section { padding: 2.75rem 0; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
