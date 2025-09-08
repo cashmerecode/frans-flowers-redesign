@@ -32,9 +32,8 @@
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO GIF -->
     <section class="hero container">
-      <img class="hero-media" src="img/hero.gif" alt="Florist selecting fresh blooms" />
       <span class="eyebrow">Fresh flowers • Same-day delivery</span>
       <h1>Seasonal bouquets, handcrafted with care.</h1>
       <p class="lead">From birthdays to weddings to just because, our designers build arrangements with farm-fresh stems and thoughtful details. Order online in minutes and we handle the rest.</p>
@@ -285,29 +284,27 @@
 
         const go = (i) => {
           index = (i + slideCount) % slideCount;
-          track.scrollTo({ left: index * track.clientWidth, behavior: 'smooth' });
+          track.style.transform = `translateX(${-index * 100}%)`;
         };
 
         prev?.addEventListener('click', () => go(index - 1));
         next?.addEventListener('click', () => go(index + 1));
 
-        track.addEventListener('scroll', () => {
-          const w = track.clientWidth || 1;
-          const approx = Math.round(track.scrollLeft / w);
-          if (approx !== index) index = approx;
-        }, { passive: true });
+        let startX = 0, dx = 0;
+        gal.addEventListener('touchstart', e => { startX = e.touches[0].clientX; dx = 0; }, {passive:true});
+        gal.addEventListener('touchmove',  e => { dx = e.touches[0].clientX - startX; }, {passive:true});
+        gal.addEventListener('touchend',   () => { if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1)); });
 
-        let timer;
-        const start = () => timer = setInterval(() => go(index + 1), 4000);
-        const stop  = () => clearInterval(timer);
+        let timer = setInterval(() => go(index + 1), 4000);
+        const stop = () => { clearInterval(timer); timer = null; };
+        const start = () => { if (!timer) timer = setInterval(() => go(index + 1), 4000); };
 
-        start();
         gal.addEventListener('pointerenter', stop);
         gal.addEventListener('pointerleave', start);
         gal.addEventListener('focusin', stop);
         gal.addEventListener('focusout', start);
 
-        window.addEventListener('resize', () => go(index));
+        go(0);
       });
     })();
   </script>
