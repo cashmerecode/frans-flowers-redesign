@@ -53,6 +53,7 @@ button { font: inherit; }
 @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
 
+/* --- Header / Nav --- */
 header {
   position: sticky;
   top: 0;
@@ -90,7 +91,6 @@ header {
   justify-content: center;
   overflow: hidden;
 }
-
 .brand .logo img {
   width: 16px;
   height: 16px;
@@ -101,31 +101,48 @@ header {
 nav a { padding: .5rem .75rem; border-radius: 10px; }
 nav a:hover { background: color-mix(in oklab, var(--brand) 12%, transparent); }
 
-.hero { padding: 5rem 0 3rem; text-align: center; }
+/* --- HERO with GIF background --- */
+.hero {
+  position: relative;
+  padding: 6rem 0 4rem;
+  text-align: center;
+  color: #fff;
+  background: url("img/hero.gif") center/cover no-repeat;
+  min-height: 56vh;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* overlay for readability on top of moving GIF */
+  background: linear-gradient(to bottom, rgba(2,6,23,.55), rgba(2,6,23,.35));
+}
+.hero * { position: relative; z-index: 1; }
 
 .eyebrow {
   display: inline-block;
   font-size: .85rem;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--muted);
-  background: var(--brand-50);
-  border: 1px solid color-mix(in oklab, var(--brand) 35%, transparent);
+  color: #fff;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.28);
   padding: .35rem .6rem;
   border-radius: 999px;
+  backdrop-filter: blur(2px);
 }
 
 h1 {
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   line-height: 1.1;
   margin: .75rem 0;
+  color: #fff;
 }
-
 .lead {
   font-size: clamp(1rem, 2.4vw, 1.25rem);
-  color: var(--muted);
+  color: #e5e7eb;
   margin: 0 auto 1.5rem;
-  max-width: 50ch;
+  max-width: 60ch;
 }
 
 .cta { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
@@ -142,20 +159,27 @@ h1 {
   box-shadow: var(--shadow-md);
   transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
 }
-
 .btn:hover {
   background: var(--brand-600);
   transform: translateY(-1px);
   box-shadow: var(--shadow-lg);
 }
-
 .btn.secondary {
-  background: transparent;
-  color: var(--ink);
-  border-color: color-mix(in oklab, var(--ink) 18%, transparent);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border-color: rgba(255,255,255,.22);
 }
-.btn.secondary:hover { background: color-mix(in oklab, var(--ink) 6%, transparent); }
+.btn.secondary:hover { background: rgba(255,255,255,.16); }
 
+/* If users prefer reduced data/motion, don’t load/animate hero GIF */
+@media (prefers-reduced-motion: reduce) {
+  .hero { background: var(--brand-50); color: var(--ink); }
+  .hero::before { display: none; }
+  .eyebrow { background: var(--brand-50); color: var(--muted); border-color: color-mix(in oklab, var(--brand) 35%, transparent); }
+  h1, .lead, .btn.secondary { color: var(--ink); }
+}
+
+/* --- Sections & Cards --- */
 section { padding: 2.75rem 0; }
 
 .section-title {
@@ -165,7 +189,6 @@ section { padding: 2.75rem 0; }
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
-
 .section-title h2 { font-size: 1.6rem; margin: 0; }
 .section-title p { margin: 0; color: var(--muted); }
 
@@ -177,9 +200,17 @@ section { padding: 2.75rem 0; }
   border: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
   transition: transform .18s ease, box-shadow .2s ease;
 }
-
 .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .card h3 { margin: .25rem 0 .5rem; }
+
+/* Product / feature images inside cards */
+.card img {
+  width: 100%;
+  border-radius: calc(var(--radius) - 4px);
+  margin-bottom: .75rem;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
 
 .chip {
   display: inline-flex;
@@ -193,7 +224,6 @@ section { padding: 2.75rem 0; }
 }
 
 .feature { display: flex; gap: .9rem; align-items: flex-start; }
-
 .icon {
   width: 40px;
   height: 40px;
@@ -205,6 +235,7 @@ section { padding: 2.75rem 0; }
   box-shadow: var(--shadow-sm);
 }
 
+/* --- Horizontal timeline --- */
 .timeline {
   display: grid;
   gap: 1rem;
@@ -222,11 +253,11 @@ details {
   padding: .75rem 1rem;
   background: var(--paper);
 }
-
 summary { cursor: pointer; list-style: none; font-weight: 600; }
 summary::marker { display: none; }
 details[open] { box-shadow: var(--shadow-sm); }
 
+/* --- Forms --- */
 .input {
   width: 100%;
   padding: .7rem .85rem;
@@ -234,15 +265,11 @@ details[open] { box-shadow: var(--shadow-sm); }
   background: var(--paper);
   border: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
 }
-
 .input:focus {
   outline: none;
   box-shadow: 0 0 0 4px var(--ring);
   border-color: transparent;
 }
 
+/* --- Footer --- */
 footer { padding: 3rem 0 4rem; color: var(--muted); }
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
