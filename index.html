@@ -6,6 +6,7 @@
   <title>Fran's Florals</title>
   <meta name="description" content="Fran's Florals — fresh, seasonal bouquets with same-day local delivery. Weddings, birthdays, sympathy, and just because." />
   <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/rose.svg" />
   <link rel="alternate icon" href="img/rose-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="img/rose-180.png" sizes="180x180" />
@@ -30,6 +31,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero container">
       <span class="eyebrow">Fresh flowers • Same-day delivery</span>
       <h1>Seasonal bouquets, handcrafted with care.</h1>
@@ -220,41 +222,6 @@
         </div>
       </div>
     </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Get in touch</h2>
-          <p>Questions about an order or a custom request?</p>
-        </div>
-        <form class="grid grid-2 card" aria-labelledby="contact">
-          <div>
-            <label for="name">Name</label>
-            <input class="input" id="name" name="name" autocomplete="name" />
-          </div>
-          <div>
-            <label for="email2">Email</label>
-            <input class="input" id="email2" name="email" type="email" autocomplete="email" />
-          </div>
-          <div>
-            <label for="occasion">Occasion</label>
-            <input class="input" id="occasion" name="occasion" placeholder="Birthday, sympathy, wedding, etc." />
-          </div>
-          <div>
-            <label for="date">Preferred delivery date</label>
-            <input class="input" id="date" name="date" type="date" />
-          </div>
-          <div style="grid-column:1/-1">
-            <label for="msg">Message</label>
-            <textarea class="input" id="msg" name="message" rows="4" placeholder="Tell us about your color palette or any special requests."></textarea>
-          </div>
-          <div>
-            <button class="btn" type="submit">Send message</button>
-          </div>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer>
@@ -291,13 +258,11 @@
         next?.addEventListener('click', stepForward);
         track.addEventListener('click', stepForward);
 
-        // swipe on touch
         let startX = 0, dx = 0;
         gal.addEventListener('touchstart', e => { startX = e.touches[0].clientX; dx = 0; }, {passive:true});
         gal.addEventListener('touchmove',  e => { dx = e.touches[0].clientX - startX; }, {passive:true});
         gal.addEventListener('touchend',   () => { if (Math.abs(dx) > 40) (dx < 0 ? stepForward() : stepBack()); });
 
-        // autoplay per gallery
         let timer;
         const start = () => { stop(); timer = setInterval(stepForward, 5000); };
         const stop  = () => { if (timer) clearInterval(timer); };
