@@ -42,3 +42,33 @@
     gap: .6rem;
     font-weight: 700;
   }
+  .brand .logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-600));
+    box-shadow: var(--shadow-sm);
+  }
+  nav a {
+    padding: .5rem .75rem;
+    border-radius: 10px;
+  }
+  nav a:hover {
+    background: color-mix(in oklab, var(--brand) 12%, transparent);
+  }
+
+  .hero {
+    padding: 5rem 0 3rem;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--brand-50);
+    border: 1px solid color-mix(in oklab, var(--brand) 35%, transparent);
+    padding: .35rem .6rem;
+    border-radius: 999px;
+  }
