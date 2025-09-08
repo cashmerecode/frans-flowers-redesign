@@ -360,22 +360,22 @@ footer {
 }
 .social {
   margin-top: 1rem;
-  display: inline-flex;
-  gap: .5rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: .5rem;
 }
 .social a {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
-  padding: .5rem .75rem;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
   border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
-  border-radius: 10px;
-  text-decoration: none;
 }
 .social a:hover {
   background: color-mix(in oklab, var(--brand) 12%, transparent);
-  text-decoration: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
