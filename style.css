@@ -112,14 +112,16 @@ header {
 
 .drawer {
   position: fixed;
-  inset: 0 0 0 auto;
-  width: min(86vw,360px);
-  background: var(--paper); /* SOLID background */
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(86vw, 360px);
+  background: var(--paper);
   color: var(--ink);
   box-shadow: var(--shadow-lg);
   transform: translateX(100%);
   transition: transform .25s ease;
-  z-index: 60; /* sits above everything */
+  z-index: 60;
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
