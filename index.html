@@ -6,8 +6,6 @@
   <title>Fran's Florals</title>
   <meta name="description" content="Fran's Florals — fresh, seasonal bouquets with same-day local delivery. Weddings, birthdays, sympathy, and just because." />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/rose.svg" />
   <link rel="alternate icon" href="img/rose-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="img/rose-180.png" sizes="180x180" />
@@ -32,7 +30,6 @@
   </header>
 
   <main>
-    <!-- HERO GIF -->
     <section class="hero container">
       <span class="eyebrow">Fresh flowers • Same-day delivery</span>
       <h1>Seasonal bouquets, handcrafted with care.</h1>
@@ -274,37 +271,44 @@
 
     (function initGalleries(){
       const galleries = document.querySelectorAll('[data-gallery]');
+
       galleries.forEach(gal => {
         const track = gal.querySelector('.track');
+        const slides = Array.from(track.children);
         const prev  = gal.querySelector('.prev');
         const next  = gal.querySelector('.next');
 
         let index = 0;
-        const slideCount = track.children.length;
-
-        const go = (i) => {
-          index = (i + slideCount) % slideCount;
+        const show = (i) => {
+          index = (i + slides.length) % slides.length;
           track.style.transform = `translateX(${-index * 100}%)`;
         };
 
-        prev?.addEventListener('click', () => go(index - 1));
-        next?.addEventListener('click', () => go(index + 1));
+        const stepForward = () => show(index + 1);
+        const stepBack    = () => show(index - 1);
 
+        prev?.addEventListener('click', stepBack);
+        next?.addEventListener('click', stepForward);
+        track.addEventListener('click', stepForward);
+
+        // swipe on touch
         let startX = 0, dx = 0;
         gal.addEventListener('touchstart', e => { startX = e.touches[0].clientX; dx = 0; }, {passive:true});
         gal.addEventListener('touchmove',  e => { dx = e.touches[0].clientX - startX; }, {passive:true});
-        gal.addEventListener('touchend',   () => { if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1)); });
+        gal.addEventListener('touchend',   () => { if (Math.abs(dx) > 40) (dx < 0 ? stepForward() : stepBack()); });
 
-        let timer = setInterval(() => go(index + 1), 4000);
-        const stop = () => { clearInterval(timer); timer = null; };
-        const start = () => { if (!timer) timer = setInterval(() => go(index + 1), 4000); };
+        // autoplay per gallery
+        let timer;
+        const start = () => { stop(); timer = setInterval(stepForward, 5000); };
+        const stop  = () => { if (timer) clearInterval(timer); };
 
         gal.addEventListener('pointerenter', stop);
         gal.addEventListener('pointerleave', start);
         gal.addEventListener('focusin', stop);
         gal.addEventListener('focusout', start);
 
-        go(0);
+        show(0);
+        start();
       });
     })();
   </script>
