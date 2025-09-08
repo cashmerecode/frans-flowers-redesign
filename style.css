@@ -30,6 +30,7 @@
   }
 }
 
+/* Base */
 *, *::before, *::after { box-sizing: border-box; }
 html:focus-within { scroll-behavior: smooth; }
 
@@ -45,7 +46,9 @@ img, svg { display: block; max-width: 100%; height: auto; }
 a { color: var(--brand); text-decoration: none; }
 a:hover { color: var(--brand-600); text-decoration: underline; }
 button { font: inherit; cursor: pointer; background: none; border: 0; color: inherit; }
+:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--ring); border-radius: 8px; }
 
+/* Layout */
 .container { width: min(1100px, 100% - 2rem); margin-inline: auto; }
 .grid { display: grid; gap: 1.25rem; }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -53,6 +56,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
 
+/* Header / Nav */
 header {
   position: sticky;
   top: 0;
@@ -92,6 +96,7 @@ header {
 .nav-links { display: flex; gap: .25rem; }
 .nav-links a { padding: .5rem .75rem; border-radius: 10px; }
 .nav-links a:hover { background: color-mix(in oklab, var(--brand) 12%, transparent); }
+.nav-links a[aria-current="page"] { background: color-mix(in oklab, var(--brand) 14%, transparent); color: var(--brand-600); }
 
 .menu-toggle { display: none; padding: .4rem; border-radius: 10px; }
 .menu-toggle:hover { background: color-mix(in oklab, var(--brand) 12%, transparent); }
@@ -101,12 +106,13 @@ header {
   .menu-toggle { display: inline-flex; }
 }
 
+/* Drawer */
 .scrim {
   position: fixed;
   inset: 0;
   background: rgba(2, 6, 23, .5);
   backdrop-filter: blur(2px);
-  z-index: 49;
+  z-index: 59;
 }
 .scrim[hidden] { display: none !important; }
 
@@ -147,6 +153,7 @@ header {
   color: var(--brand-600);
 }
 
+/* Hero */
 .hero {
   position: relative;
   padding: 6rem 0 4rem;
@@ -188,6 +195,7 @@ h1 {
   max-width: 60ch;
 }
 
+/* CTAs */
 .cta {
   display: flex;
   gap: .75rem;
@@ -217,6 +225,7 @@ form .cta {
 .btn.secondary { background: rgba(255, 255, 255, .08); color: #fff; border-color: rgba(255, 255, 255, .22); }
 .btn.secondary:hover { background: rgba(255, 255, 255, .16); }
 
+/* Sections */
 section { padding: 2.75rem 0; }
 
 .section-title {
@@ -229,6 +238,7 @@ section { padding: 2.75rem 0; }
 }
 .section-title h2 { font-size: 1.6rem; margin: 0; }
 
+/* Cards / Products */
 .card {
   background: var(--paper);
   border-radius: var(--radius);
@@ -259,6 +269,7 @@ section { padding: 2.75rem 0; }
   color: var(--muted);
 }
 
+/* Timeline / Gallery */
 .timeline {
   display: grid;
   gap: 1rem;
@@ -309,6 +320,7 @@ section { padding: 2.75rem 0; }
 .gallery-btn.prev { left: .5rem; }
 .gallery-btn.next { right: .5rem; }
 
+/* FAQ */
 details {
   border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
   border-radius: 12px;
@@ -319,6 +331,7 @@ summary { cursor: pointer; list-style: none; font-weight: 600; }
 summary::marker { display: none; }
 details[open] { box-shadow: var(--shadow-sm); }
 
+/* Forms */
 .input {
   width: 100%;
   padding: .7rem .85rem;
@@ -332,14 +345,22 @@ details[open] { box-shadow: var(--shadow-sm); }
   border-color: transparent;
 }
 
+/* Center the form submit button */
 form button[type="submit"] {
   display: block;
   margin: 1.5rem auto 0;
   grid-column: 1 / -1;
 }
 
+/* Footer */
 footer {
   padding: 3rem 0 4rem;
   color: var(--muted);
   text-align: center;
+}
+
+/* Motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  .hero::before { display: none; }
 }
