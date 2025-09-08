@@ -245,7 +245,7 @@ section { padding: 2.75rem 0; }
   width: 100%;
   border-radius: calc(var(--radius) - 4px);
   margin-bottom: .75rem;
-  aspect-ratio: 4/3;
+  aspect-ratio: 4/4;
   object-fit: cover;
 }
 
