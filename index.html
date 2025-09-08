@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Frans Florals</title>
-  <meta name="description" content="Frans Florals — fresh, seasonal bouquets with same-day local delivery. Weddings, birthdays, sympathy, and just because." />
+  <title>Fran's Florals</title>
+  <meta name="description" content="Fran's Florals — fresh, seasonal bouquets with same-day local delivery. Weddings, birthdays, sympathy, and just because." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-  <div class="container nav">
-    <div class="brand"><span class="logo" aria-hidden="true"></span> <span>Frans Florals</span></div>
-    <nav aria-label="Primary">
-      <a href="#features">Shop</a>
-      <a href="#timeline">Occasions</a>
-      <a href="#faq">Delivery & FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo" aria-hidden="true"></span> <span>Fran's Florals</span></div>
+      <nav aria-label="Primary">
+        <a href="#features">Shop</a>
+        <a href="#timeline">Occasions</a>
+        <a href="#faq">Delivery & FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <!-- HERO -->
     <section class="hero container">
       <span class="eyebrow">Fresh flowers • Same-day delivery</span>
       <h1>Seasonal bouquets, handcrafted with care.</h1>
@@ -29,7 +30,7 @@
         <a class="btn secondary" href="#how">How It Works</a>
       </div>
     </section>
-    <!-- FEATURE-CARDS -->
+
     <section id="features">
       <div class="container">
         <div class="section-title">
@@ -41,7 +42,10 @@
             <div class="chip">From $55</div>
             <h3>The Market Bouquet</h3>
             <p>A changing mix of seasonal blooms chosen by your designer. Lush, bright, and full of texture.</p>
-            <div class="cta"><button class="btn" type="button">Add to Cart</button><button class="btn secondary" type="button">View Details</button></div>
+            <div class="cta">
+              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn secondary" type="button">View Details</button>
+            </div>
           </article>
           <article class="card">
             <div class="chip">From $85</div>
@@ -56,7 +60,7 @@
         </div>
       </div>
     </section>
-    <!-- SEASONAL TIMELINE -->
+
     <section id="timeline">
       <div class="container">
         <div class="section-title">
@@ -83,7 +87,7 @@
         </div>
       </div>
     </section>
-    <!-- HOW IT WORKS -->
+
     <section id="how">
       <div class="container">
         <div class="section-title">
@@ -111,7 +115,7 @@
         </div>
       </div>
     </section>
-    <!-- FAQ -->
+
     <section id="faq">
       <div class="container">
         <div class="section-title">
@@ -138,7 +142,7 @@
         </div>
       </div>
     </section>
-    <!-- SUPPORT -->
+
     <section id="contact">
       <div class="container">
         <div class="section-title">
@@ -173,16 +177,18 @@
       </div>
     </section>
   </main>
+
   <footer>
     <div class="container">
-      <p><strong>Frans Flowers</strong> — seasonal flowers, local delivery, custom designs.</p>
+      <p><strong>Fran's Flowers</strong> — seasonal flowers, local delivery, custom designs.</p>
     </div>
   </footer>
+
   <script>
     const header = document.querySelector('header');
     const setShadow = () => header.style.boxShadow = window.scrollY > 6 ? 'var(--shadow-sm)' : 'none';
     setShadow();
-    document.addEventListener('scroll', setShadow, {passive:true});
+    document.addEventListener('scroll', setShadow, { passive: true });
   </script>
 </body>
 </html>
