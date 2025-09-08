@@ -6,6 +6,8 @@
   <title>Fran's Florals</title>
   <meta name="description" content="Fran's Florals — fresh, seasonal bouquets with same-day local delivery. Weddings, birthdays, sympathy, and just because." />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/rose.svg" />
   <link rel="alternate icon" href="img/rose-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="img/rose-180.png" sizes="180x180" />
@@ -30,7 +32,9 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero container">
+      <img class="hero-media" src="img/hero.gif" alt="Florist selecting fresh blooms" />
       <span class="eyebrow">Fresh flowers • Same-day delivery</span>
       <h1>Seasonal bouquets, handcrafted with care.</h1>
       <p class="lead">From birthdays to weddings to just because, our designers build arrangements with farm-fresh stems and thoughtful details. Order online in minutes and we handle the rest.</p>
@@ -40,15 +44,18 @@
       </div>
     </section>
 
+    <!-- FEATURE CARDS -->
     <section id="features">
       <div class="container">
         <div class="section-title">
           <h2>Our favorites</h2>
           <p>Popular picks, ready to deliver today.</p>
         </div>
+
         <div class="grid grid-3">
+          <!-- Market Bouquet -->
           <article class="card">
-            <img src="img/flowers1.jpg" alt="The Market Bouquet — seasonal mix of fresh flowers" />
+            <img class="product" src="img/flowers1.jpg" alt="The Market Bouquet — seasonal mix of fresh flowers" loading="lazy" />
             <div class="chip">From $55</div>
             <h3>The Market Bouquet</h3>
             <p>A changing mix of seasonal blooms chosen by your designer. Lush, bright, and full of texture.</p>
@@ -58,50 +65,110 @@
             </div>
           </article>
 
+          <!-- Rosy Classic -->
           <article class="card">
-            <img src="img/flowers2.jpg" alt="Rosy Classic bouquet with eucalyptus and ruscus" />
+            <img class="product" src="img/flowers2.jpg" alt="Rosy Classic bouquet with eucalyptus and ruscus" loading="lazy" />
             <div class="chip">From $85</div>
             <h3>Rosy Classic</h3>
             <p>Timeless roses with accents of eucalyptus and ruscus. Choose your color palette at checkout.</p>
+            <div class="cta">
+              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn secondary" type="button">View Details</button>
+            </div>
           </article>
 
+          <!-- Sunlit Garden -->
           <article class="card">
-            <img src="img/store.jpg" alt="Sunlit Garden bouquet in warm yellow and cream tones" />
+            <img class="product" src="img/store.jpg" alt="Sunlit Garden bouquet in yellow and cream tones with soft greens" loading="lazy" />
             <div class="chip">From $65</div>
             <h3>Sunlit Garden</h3>
             <p>Sunny yellows and soft creams with delicate greens. A cheerful pick for any day.</p>
+            <div class="cta">
+              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn secondary" type="button">View Details</button>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- OCCASIONS / SEASONS -->
     <section id="timeline">
       <div class="container">
         <div class="section-title">
           <h2>Occasions & seasons</h2>
           <p>Inspiration for every moment of the year.</p>
         </div>
+
         <div class="timeline" role="list">
-          <article class="card" role="listitem">
+          <!-- SPRING -->
+          <article class="card" role="listitem" data-gallery>
             <h3>Spring</h3>
             <p><strong>March–May:</strong> Tulips, ranunculus, sweet pea, and peonies when available.</p>
+            <div class="gallery">
+              <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+              <div class="track" aria-live="polite">
+                <img src="img/spring-1.jpg" alt="Spring tulips" loading="lazy" />
+                <img src="img/spring-2.jpg" alt="Spring ranunculus" loading="lazy" />
+                <img src="img/spring-3.jpg" alt="Spring sweet peas" loading="lazy" />
+                <img src="img/spring-4.jpg" alt="Peonies in spring" loading="lazy" />
+              </div>
+              <button class="gallery-btn next" aria-label="Next image">›</button>
+            </div>
           </article>
-          <article class="card" role="listitem">
+
+          <!-- SUMMER -->
+          <article class="card" role="listitem" data-gallery>
             <h3>Summer</h3>
             <p><strong>June–August:</strong> Dahlias, sunflowers, garden roses, and fragrant herbs.</p>
+            <div class="gallery">
+              <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+              <div class="track" aria-live="polite">
+                <img src="img/summer-1.jpg" alt="Summer dahlias" loading="lazy" />
+                <img src="img/summer-2.jpg" alt="Golden sunflowers" loading="lazy" />
+                <img src="img/summer-3.jpg" alt="Garden roses" loading="lazy" />
+                <img src="img/summer-4.jpg" alt="Fragrant herbs bouquet" loading="lazy" />
+              </div>
+              <button class="gallery-btn next" aria-label="Next image">›</button>
+            </div>
           </article>
-          <article class="card" role="listitem">
+
+          <!-- AUTUMN -->
+          <article class="card" role="listitem" data-gallery>
             <h3>Autumn</h3>
             <p><strong>September–November:</strong> Chrysanthemums, amaranthus, maple foliage, and warm tones.</p>
+            <div class="gallery">
+              <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+              <div class="track" aria-live="polite">
+                <img src="img/autumn-1.jpg" alt="Autumn chrysanthemums" loading="lazy" />
+                <img src="img/autumn-2.jpg" alt="Amaranthus in fall arrangements" loading="lazy" />
+                <img src="img/autumn-3.jpg" alt="Maple foliage bouquet" loading="lazy" />
+                <img src="img/autumn-4.jpg" alt="Warm toned fall flowers" loading="lazy" />
+              </div>
+              <button class="gallery-btn next" aria-label="Next image">›</button>
+            </div>
           </article>
-          <article class="card" role="listitem">
+
+          <!-- WINTER -->
+          <article class="card" role="listitem" data-gallery>
             <h3>Winter</h3>
             <p><strong>December–February:</strong> Evergreens, anemones, hellebores, berries, and whites.</p>
+            <div class="gallery">
+              <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+              <div class="track" aria-live="polite">
+                <img src="img/winter-1.jpg" alt="Evergreens and winter textures" loading="lazy" />
+                <img src="img/winter-2.jpg" alt="White anemones" loading="lazy" />
+                <img src="img/winter-3.jpg" alt="Hellebores arrangement" loading="lazy" />
+                <img src="img/winter-4.jpg" alt="Winter berries and whites" loading="lazy" />
+              </div>
+              <button class="gallery-btn next" aria-label="Next image">›</button>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- HOW IT WORKS -->
     <section id="how">
       <div class="container">
         <div class="section-title">
@@ -130,6 +197,7 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq">
       <div class="container">
         <div class="section-title">
@@ -157,6 +225,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <div class="section-title">
@@ -203,6 +272,44 @@
     const setShadow = () => header.style.boxShadow = window.scrollY > 6 ? 'var(--shadow-sm)' : 'none';
     setShadow();
     document.addEventListener('scroll', setShadow, { passive: true });
+
+    (function initGalleries(){
+      const galleries = document.querySelectorAll('[data-gallery]');
+      galleries.forEach(gal => {
+        const track = gal.querySelector('.track');
+        const prev  = gal.querySelector('.prev');
+        const next  = gal.querySelector('.next');
+
+        let index = 0;
+        const slideCount = track.children.length;
+
+        const go = (i) => {
+          index = (i + slideCount) % slideCount;
+          track.scrollTo({ left: index * track.clientWidth, behavior: 'smooth' });
+        };
+
+        prev?.addEventListener('click', () => go(index - 1));
+        next?.addEventListener('click', () => go(index + 1));
+
+        track.addEventListener('scroll', () => {
+          const w = track.clientWidth || 1;
+          const approx = Math.round(track.scrollLeft / w);
+          if (approx !== index) index = approx;
+        }, { passive: true });
+
+        let timer;
+        const start = () => timer = setInterval(() => go(index + 1), 4000);
+        const stop  = () => clearInterval(timer);
+
+        start();
+        gal.addEventListener('pointerenter', stop);
+        gal.addEventListener('pointerleave', start);
+        gal.addEventListener('focusin', stop);
+        gal.addEventListener('focusout', start);
+
+        window.addEventListener('resize', () => go(index));
+      });
+    })();
   </script>
 </body>
 </html>
